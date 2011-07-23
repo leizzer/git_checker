@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+require 'git_checker'
+include GitChecker
+
+checkers = Dir.entries(Dir.pwd).find_all do |f|
+  f.match /\.gck/
+end
+
+checkers.each do |ck|
+  eval File.read(ck)
+end
+  
