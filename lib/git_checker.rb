@@ -6,7 +6,7 @@ require_relative 'branch'
 module GitChecker
 
   include MessagePrinter
-
+  
   #def compare_branches_between_repos target_repo, repo_to_compare, ignore=[]
   def branches_not_in repo, from, ignore=[]
     print_message "Branches in #{from.name.capitalize} not in #{repo.name.capitalize}"
@@ -36,6 +36,15 @@ module GitChecker
           puts log
         end
       end
+    end
+  end
+
+  #You ask, you answer and you have
+  def check_group question, &block
+    print "\n>>> #{question} [y/n] "
+    answer = gets.strip
+    if answer == 'y'
+      yield
     end
   end
 
