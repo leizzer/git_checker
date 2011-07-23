@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+require 'git_checker'
+include GitChecker
+
+def check_group question, &block
+  yield
+end
+
+checkers = Dir.entries(Dir.pwd).find_all do |f|
+  f.match /\.gck/
+end
+
+checkers.each do |ck|
+  eval File.read(ck)
+end
