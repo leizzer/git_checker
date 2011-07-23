@@ -1,6 +1,10 @@
 require_relative "git_checker/version"
+require_relative 'message_printer'
+require_relative 'repository'
+require_relative 'branch'
 
 module GitChecker
+
   def compare_branches_between_repos target_repo, repo_to_compare, ignore=[]
     puts target_repo.missing_branches(repo_to_compare.list_of_branches) - ignore
   end
@@ -26,4 +30,5 @@ module GitChecker
       end
     end
   end
+
 end
