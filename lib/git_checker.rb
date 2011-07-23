@@ -1,4 +1,4 @@
-require "git_checker/version"
+require_relative "git_checker/version"
 
 module GitChecker
   def compare_branches_between_repos target_repo, repo_to_compare, ignore=[]
