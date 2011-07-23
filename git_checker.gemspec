@@ -5,11 +5,11 @@ require "git_checker/version"
 Gem::Specification.new do |s|
   s.name        = "git_checker"
   s.version     = GitChecker::VERSION
-  s.authors     = ["TODO: Write your name"]
-  s.email       = ["TODO: Write your email address"]
+  s.authors     = ["leizzer"]
+  s.email       = ["lizzydw@gmail.com"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{Keep an eye on your git repository}
+  s.description = %q{Keep an eye on your git repository}
 
   s.rubyforge_project = "git_checker"
 
