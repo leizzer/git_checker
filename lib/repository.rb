@@ -1,8 +1,9 @@
 class Repository
   
-  attr_accessor :branches
+  attr_accessor :branches, :name
 
   def initialize(repo = nil)
+    @name = repo || 'local' 
     collect_branches_from repo
   end
 
