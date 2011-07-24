@@ -7,9 +7,9 @@ Gem::Specification.new do |s|
   s.version     = GitChecker::VERSION
   s.authors     = ["leizzer"]
   s.email       = ["lizzydw@gmail.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/leizzer/git_checker"
   s.summary     = %q{Keep an eye on your git repository}
-  s.description = %q{Keep an eye on your git repository}
+  s.description = %q{Using git_checker you can make scrips for perform checks over your git repositories easily	}
 
   s.rubyforge_project = "git_checker"
 
