@@ -15,14 +15,14 @@ Usage:
 ------
 
 Create a file with the extencion .gck.rb
-`touch checkthis.gck.rb`
+
+    touch checkthis.gck.rb
 
 Add some checks in that file, like:
-`
-#checkthis.gck.rb
-local = Repository.new
-commits_not_in local.branches['master'], local
-`
+
+    #checkthis.gck.rb
+    local = Repository.new
+    commits_not_in local.branches['master'], local
 
 Then run the command: 
 `gck`
@@ -31,17 +31,16 @@ More:
 -----
 
 You can also ask for run task that you not always want, like this:
-`
-#checkthis.gck.rb
-local= Repository.new
-remote= Repository.new 'remote'
 
-commits_not_in local.branches['master'], local
+    #checkthis.gck.rb
+    local= Repository.new
+    remote= Repository.new 'remote'
 
-check_group "Check for branches not in Remote?" do
-  branches_not_in remote, local
-end #>>> Check for branches not in Remote? [y/n]
-`
+    commits_not_in local.branches['master'], local
+
+    check_group "Check for branches not in Remote?" do
+      branches_not_in remote, local
+    end #>>> Check for branches not in Remote? [y/n]
 
 You can skip this questions an run all with the command `agck`
 
