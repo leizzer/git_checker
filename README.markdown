@@ -14,7 +14,7 @@ Install:
 Usage:
 ------
 
-Create a file with the extencion .gck.rb
+Create a file with the extension .gck.rb
 
     touch checkthis.gck.rb
 
@@ -47,3 +47,5 @@ You can skip this questions an run all with the command `agck`
 Please:
 -------
 Feedback.
+
+note: the merges should be done with `--no-ff` option for create a commit message in every merge.
