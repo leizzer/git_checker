@@ -30,7 +30,7 @@ class Repository
     else
       branches = `git branch`.split
     end
-    branches - ['*']
+    branches - ['*', '->']
   end
 
   def branch_name list, repo
