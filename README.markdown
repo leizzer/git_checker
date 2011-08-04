@@ -27,6 +27,12 @@ Add some checks in that file, like:
 Then run the command: 
 `gck`
 
+Available Checks:
+-----------------
+* branches_not_in repo, from, ignore=[]
+* branches_not_merged_in branch, from, ignore=[]
+* commits_not_in branch, from, ignore=[]
+
 More:
 -----
 
