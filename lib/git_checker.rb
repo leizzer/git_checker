@@ -6,23 +6,40 @@ require_relative 'branch'
 module GitChecker
 
   include MessagePrinter
-  
+
+  # Returns the branches from 'from' (Repository) that are not pushed to 'repo' (Repository)
   def branches_not_in repo, from, ignore=[]
-    print_message "Branches in #{from.name.capitalize} not in #{repo.name.capitalize}"
-    puts repo.missing_branches(from.list_of_branches) - ignore
+    repo.missing_branches(from.list_of_branches) - ignore
   end
 
+  # Prints the result from branches_not_in method
+  def print_branches_not_in repo, from, ignore=[]
+    print_message "Branches in #{from.name.capitalize} not in #{repo.name.capitalize}"
+    puts branches_not_in(repo, from, ignore)
+  end
+
+  ################################################################
+
+  # Returns the branches from 'from' (Repository) that are not merged in 'branch' (Branch)
   def branches_not_merged_in branch, from, ignore=[]
-    print_message "Branches not in #{branch.name.capitalize}"
     branches = []
     from.branches.values.each do |b|
       unless ignore.include? b.name
         branches << b.name if branch.merges_with(b.name).empty?
       end
     end
-    puts branches
+    branches
   end
 
+  # Prints the result from branches_not_merged_in method
+  def print_branches_not_merged_in branch, from, ignore=[]
+    print_message "Branches not in #{branch.name.capitalize}"
+    puts branches_not_merged_in(branch, from, ignore)
+  end
+
+  ################################################################
+
+  # Returns the commits from all the branches in 'from' (Repository) that are not in 'branch' (Branch)
   def commits_not_in branch, from, ignore=[]
     print_message "Commits not in #{branch.name.capitalize}"
     from.branches.each_value do |b|
@@ -35,6 +52,8 @@ module GitChecker
       end
     end
   end
+
+  ################################################################
 
   #You ask, you answer and you have
   def check_group question, &block
