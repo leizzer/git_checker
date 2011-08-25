@@ -30,8 +30,10 @@ Then run the command:
 Available Checks:
 -----------------
 * branches_not_in repo, from, ignore=[]
+    * print_branches_not_in repo, from, ignore=[]
 * branches_not_merged_in branch, from, ignore=[]
-* commits_not_in branch, from, ignore=[]
+    * print_branches_not_merged_in branch, from, ignore=[]
+* print_commits_not_in branch, from, ignore=[]
 
 More:
 -----
