@@ -22,7 +22,7 @@ Add some checks in that file, like:
 
     #checkthis.gck.rb
     local = Repository.new
-    commits_not_in local.branches['master'], local
+    print_commits_not_in local.branches['master'], local
 
 Then run the command: 
 `gck`
@@ -43,11 +43,11 @@ You can also ask for run task that you not always want, like this:
     remote= Repository.new 'origin'
     ignore= %w(backup test) #for ignore this branches in the list
 
-    commits_not_in local.branches['master'], local, ignore
+    print_commits_not_in local.branches['master'], local, ignore
 
     check_group "Check for branches not in Remote?" do
 
-      branches_not_in remote, local, ignore
+      print_branches_not_in remote, local, ignore
 
     end #>>> Check for branches not in Remote? [y/n]
 
