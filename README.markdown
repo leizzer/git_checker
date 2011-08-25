@@ -20,9 +20,11 @@ Create a file with the extension .gck.rb
 
 Add some checks in that file, like:
 
+```ruby
     #checkthis.gck.rb
     local = Repository.new
     print_commits_not_in local.branches['master'], local
+```
 
 Then run the command: 
 `gck`
@@ -40,6 +42,7 @@ More:
 
 You can also ask for run task that you not always want, like this:
 
+```ruby
     #checkthis.gck.rb
     local= Repository.new
     remote= Repository.new 'origin'
@@ -52,6 +55,7 @@ You can also ask for run task that you not always want, like this:
       print_branches_not_in remote, local, ignore
 
     end #>>> Check for branches not in Remote? [y/n]
+```
 
 You can skip this questions an run all with the command `agck`
 
