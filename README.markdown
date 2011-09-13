@@ -2,9 +2,7 @@ Git Checker
 ===========
 screenshot: http://dl.dropbox.com/u/5847684/Screen%20shot%202011-06-30%20at%201.05.43%20PM.png
 
-It is useful for keep an eye on your git repositories, what branch has been not merged yet, commits not in some branch and more.
-
-"It's like a Test for your git"
+The target of this gem is make easy the checks over your git repositories.
 
 Install:
 --------
@@ -26,7 +24,7 @@ Add some checks in that file, like:
     print_commits_not_in local.branches['master'], local
 ```
 
-Then run the command: 
+**Then run the command:**
 `gck`
 
 Available Checks:
