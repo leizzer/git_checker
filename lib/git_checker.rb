@@ -40,7 +40,7 @@ module GitChecker
   ################################################################
 
   # Returns the commits from all the branches in 'from' (Repository) that are not in 'branch' (Branch)
-  def commits_not_in branch, from, ignore=[]
+  def print_commits_not_in branch, from, ignore=[]
     print_message "Commits not in #{branch.name.capitalize}"
     from.branches.each_value do |b|
       unless ignore.include? b.name
