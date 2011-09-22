@@ -57,6 +57,18 @@ You can also ask for run task that you not always want, like this:
 
 You can skip this questions an run all with the command `agck`
 
+Log format
+----------
+
+By default it uses the standard log format, with color. You can add a `gck` section in your `~/.gitconfig` file to change it:
+
+```
+[gck]
+  format = "--pretty=format:'%Cblue%h%Creset -%C(yellow)%d%Creset %s - %C(yellow)%aN%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
+```
+
+Screenshot: http://dl.dropbox.com/u/2247903/gck-custom-log.png
+
 Please:
 -------
 Feedback.
