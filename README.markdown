@@ -12,7 +12,7 @@ Install:
 Usage:
 ------
 
-Create a file with the extension .gck.rb
+Create a file with the extension .gck.rb in the root of your project
 
     touch checkthis.gck.rb
 
@@ -24,7 +24,7 @@ Add some checks in that file, like:
     print_commits_not_in local.branches['master'], local
 ```
 
-**Then run the command:**
+**Then run the command in the directory:**
 `gck`
 
 Available Checks:
