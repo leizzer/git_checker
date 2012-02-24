@@ -25,7 +25,7 @@ module GitChecker
     branches = []
     from.branches.values.each do |b|
       unless ignore.include? b.name
-        branches << b.name if branch.merges_with(b.name).empty?
+        branches << b.name unless branch.contains?(b)
       end
     end
     branches

@@ -11,8 +11,8 @@ class Branch
     `git show -s --pretty="%H" #{full_name}`.strip
   end
 
-  def merges_with branch
-    merge_base = `git merge_base #{full_name} #{branch.full_name}`
+  def contains? branch
+    commits_not_merged_from(branch).empty?
   end
 
   def log_merges
