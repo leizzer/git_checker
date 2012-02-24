@@ -7,12 +7,16 @@ class Branch
     @repo = repo
   end
 
-  def merges_with word
-    log_merges.split.find_all { |merge| merge.include? word }
+  def commit_hash
+    `git show -s --pretty="%H" #{full_name}`.strip
+  end
+
+  def merges_with branch
+    merge_base = `git merge_base #{full_name} #{branch.full_name}`
   end
 
   def log_merges
-    `git log #{format} #{full_repo_name @repo}#{@name} --merges`
+    `git log #{format} #{full_name} --merges`
   end
 
   def format
@@ -22,7 +26,11 @@ class Branch
   end
 
   def commits_not_merged_from branch
-    `git log #{format} #{full_repo_name @repo}#{@name}..#{full_repo_name(branch.repo)}#{branch.name}`
+    `git log #{format} #{full_name}..#{branch.full_name}`
+  end
+
+  def full_name
+    "#{full_repo_name(@repo)}#{@name}"
   end
 
   private
