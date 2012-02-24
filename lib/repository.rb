@@ -34,7 +34,7 @@ class Repository
   end
 
   def branch_name list, repo
-    list.map { |b| b.sub "#{repo}/", '' }
+    list.map { |b| b =~ /^#{repo}\// ? b.sub(/^#{repo}\//, '') : nil }.compact
   end
   
 end
